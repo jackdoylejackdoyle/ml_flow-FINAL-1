@@ -134,8 +134,7 @@ if app_mode == 'Deployment':
     #st.write(target_choice)
 
     number1 = st.number_input(deploy_df.columns[0],50)
-    Sex = 'Sex'
-    number2 = st.number_input(f"Enter {Sex}", min_value=0, max_value=1, value=0)
+    number2 = st.selectbox("Select a number:", [0, 1])
     number3 = st.number_input(deploy_df.columns[2],1)
     number4 = st.number_input(deploy_df.columns[3],130)
     number5 = st.number_input(deploy_df.columns[4],245)
