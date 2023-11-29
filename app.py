@@ -136,7 +136,7 @@ if app_mode == 'Deployment':
     number1 = st.number_input("Age", value=50)
     number2 = st.selectbox("Sex (0 = Female -- 1 = Male)", [0, 1])
     number3 = st.selectbox("Chest Pain (0 = Typical Angina -- 1 = Atypical Angina -- 2 = Non-anginal Pain -- 3 = Asymptomatic:", [0, 1, 2, 3])
-    number4 = st.number_input("Systolic Blood Pressure (Normal < 120 -- Hypertension > 140)", value=130])
+    number4 = st.number_input("Systolic Blood Pressure (Normal < 120 -- Hypertension > 140)", value=130)
     number5 = st.number_input("Cholesterol (Normal < 200 -- High > 240", value=250)
     number6 = st.selectbox("Resting Blood Sugar (1 = RBS > 120mg -- 0 = RBS < 120)", [0, 1])
     number7 = st.number_input(deploy_df.columns[6],1)
