@@ -16,13 +16,13 @@ from sklearn import metrics as mt
 import subprocess
 import pickle
 
-# Set the title of the web app
-st.title("Heart Attack Analysis")
-
 # Loading Image using PIL
 im = Image.open('App_Icon.jpg')
 # Adding Image to web app
 st.set_page_config(page_title="Heart Attack Analysis App", page_icon = im)
+
+# Set the title of the web app
+st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
