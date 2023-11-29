@@ -20,21 +20,13 @@ from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
-track_emissions()
-
-# Your Streamlit app code goes here
-st.title("My Streamlit App")
-st.write("This is a simple Streamlit app.")
-
-# Example code that might contribute to carbon emissions
-button_clicked = st.button("Click me")
-
-# Check if the button is clicked
-if button_clicked:
-    st.write("Button clicked!")
+with EmissionsTracker():
+    button_clicked = st.button("Click me")
+    if button_clicked:
+        st.write("Button clicked!")
 
 # Display the estimated carbon footprint
-st.write(f"Estimated carbon footprint: {track_emissions().total_emissions} kgCO2")
+st.write(f"Estimated carbon footprint: {EmissionsTracker().total_emissions} kgCO2")
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
