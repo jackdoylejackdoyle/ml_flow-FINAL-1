@@ -157,7 +157,7 @@ if app_mode == 'Deployment':
     number5 = st.number_input("Cholesterol (Normal < 200   ///   High > 240", value=250)
     number6 = st.selectbox("Resting Blood Sugar (1 = RBS > 120mg   ///   0 = RBS < 120)", [0, 1])
     number7 = st.selectbox("Resting ECG (0 = Normal /// 1 = ST-T wave normality /// 2 = Left ventricular hypertrophy", [0, 1, 2])
-    number8 = st.number_input("Maximum Heart Rate (Average = 220 - age)", value=170)
+    number8 = st.number_input("Maximum Heart Rate (Average Max Heart Rate = (220 - [age of patient])", value=170)
     number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0", [0, 1])
     number10 = st.number_input(deploy_df.columns[9],1)
     number11 = st.number_input(deploy_df.columns[10],1)
