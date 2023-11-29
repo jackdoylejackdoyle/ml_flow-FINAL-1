@@ -16,7 +16,6 @@ from sklearn import metrics as mt
 import subprocess
 import pickle
 import altair as alt
-pip install codecarbon
 from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Heart Attack Analysis App")
