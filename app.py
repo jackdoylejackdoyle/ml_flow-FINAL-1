@@ -33,7 +33,7 @@ df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 # Sidebar for navigation
-app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis'])
+app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'Au Revoir'])
 
 if app_mode == 'Introduction':
   #gif
@@ -225,6 +225,7 @@ if app_mode == "Analysis":
   st.markdown("1. Risk of heart attack is most highly correlated with variables Max Heart Rate, Peak Exercise ST Segment, and Chest Pain.")
   st.markdown("1. Risk of heart attack is highest between 41 and 59 years of age, according to this data set.")
 
+
+if app_mode == "Au Revoir":
   image_joke = Image.open('thatsallfolks.jpg')
-  st.image(image_joke, width=250)
-  
+  st.image(image_joke, width=750)
