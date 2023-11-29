@@ -101,7 +101,6 @@ if app_mode == 'Deployment':
 
 
 
-    df = pd.read_csv("heartStats.csv")
     deploy_df= df.drop(labels='output', axis=1)
     list_var = deploy_df.columns
     #st.write(target_choice)
