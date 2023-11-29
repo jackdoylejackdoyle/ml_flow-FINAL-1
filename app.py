@@ -67,11 +67,14 @@ if app_mode == "Prediction":
   X = df.drop(labels="Heart Attack Prediction", axis=1)
   y = df["Heart Attack Prediction"]
   X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-  lm = LinearRegression()
-  lm.fit(X_train,y_train)
-  predictions = lm.predict(X_test)
-  st.write(predictions)
+  model_mode = st.sidebar.multiselect(["LinearRegression"])
+  if model_mode == 'LinearRegression': 
+    lm = LinearRegression()
+    lm.fit(X_train,y_train)
+    predictions = lm.predict(X_test)
+    st.write(predictions)
 
+  
   # Display performance metrics of the model
   variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
   st.write("1 The models explains",variance )
