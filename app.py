@@ -102,7 +102,7 @@ if app_mode == 'Deployment':
     if model_mode == 'LinearRegression': 
       model_filename ='LinearRegression.pkl'
       with open(model_filename, 'rb') as file:
-      loaded_model = pickle.load(file)
+        loaded_model = pickle.load(file)
 
 
     df = pd.read_csv("heartStats.csv")
