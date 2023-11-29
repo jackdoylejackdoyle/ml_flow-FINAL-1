@@ -19,6 +19,11 @@ import pickle
 # Set the title of the web app
 st.title("Heart Attack Analysis")
 
+# Loading Image using PIL
+im = Image.open('App_Icon.jpg')
+# Adding Image to web app
+st.set_page_config(page_title="Heart Attack Analysis App", page_icon = im)
+
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
