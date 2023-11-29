@@ -19,7 +19,7 @@ st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
-df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'}, inplace=True)
+df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 gif_path = 'HeartAttackImage.gif'
 width=250
@@ -101,6 +101,7 @@ if app_mode == 'Deployment':
 
 
     df = pd.read_csv("heartStats.csv")
+    df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
     deploy_df= df.drop(labels='output', axis=1)
     list_var = deploy_df.columns
     #st.write(target_choice)
