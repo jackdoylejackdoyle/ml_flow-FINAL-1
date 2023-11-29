@@ -35,7 +35,7 @@ app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','P
 
 if app_mode == 'Introduction':
   # Set the title of the web app
-  st.title("Heart Attack Analysis")
+  st.title("Heart Attack Prediction App")
   #gif
   gif_path = 'HeartAttackImage.gif'
   width=250
@@ -58,7 +58,7 @@ if app_mode == 'Introduction':
   st.image(image_heart, width=250)
 
 if app_mode == "Visualization":
-  st.markdown("# :white[Visualization]")
+  st.markdown("# :red[Visualization]")
   # Visualization page for plotting graphs
   list_variables = df.columns
   symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
@@ -91,7 +91,7 @@ if app_mode == "Visualization":
   st.image(image_heart, width=250)
 
 if app_mode == "Prediction":
-  st.markdown("# :white[Prediction]")
+  st.markdown("# :red[Prediction]")
   # Prediction page to predict wine quality
   X = df.drop(labels="Heart Attack Prediction", axis=1)
   y = df["Heart Attack Prediction"]
@@ -157,7 +157,7 @@ if app_mode == "Prediction":
 
 if app_mode == 'Deployment':
     # Deployment page for model deployment
-    st.markdown("# :white[Deployment]")
+    st.markdown("# :red[Deployment]")
     #id = st.text_input('ID Model', '/content/mlruns/1/0ad40de668d6475dab9dccad85438f40/artifacts/top_model_v1')
 
     # Load model for prediction
@@ -209,7 +209,7 @@ if app_mode == 'Deployment':
     st.image(image_heart, width=250)
 
 if app_mode == "Analysis":
-  st.markdown("## Analysis")
+  st.markdown("# :red[Analysis]")
   list_variables = df.columns
 
 
