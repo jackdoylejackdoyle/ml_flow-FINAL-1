@@ -134,8 +134,8 @@ if app_mode == 'Deployment':
     #st.write(target_choice)
 
     number1 = st.number_input("Age", value=50)
-    number2 = st.selectbox("Sex (Female = 0   ///   Male = 1)", [0, 1])
-    number3 = st.selectbox("Chest Pain (Typical Angina = 0   ///   Atypical Angina = 1   ///   Non-anginal Pain = 2   ///   Asymptomatic = 3", [0, 1, 2, 3])
+    number2 = st.selectbox("Sex (Female = 0 ___ Male = 1)", [0, 1])
+    number3 = st.selectbox("Chest Pain (Typical Angina = 0 ___ Atypical Angina = 1 ___ Non-anginal Pain = 2 ___ Asymptomatic = 3", [0, 1, 2, 3])
     number4 = st.number_input("Systolic Blood Pressure (Normal < 120   ///   Hypertension > 140)", value=130)
     number5 = st.number_input("Cholesterol (Normal < 200   ///   High > 240", value=250)
     number6 = st.selectbox("Resting Blood Sugar (1 = RBS > 120mg   ///   0 = RBS < 120)", [0, 1])
