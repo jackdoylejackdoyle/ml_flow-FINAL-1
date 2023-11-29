@@ -33,7 +33,7 @@ st.markdown(
     """
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
             font-size: 16px;
         }
     </style>
