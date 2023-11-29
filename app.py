@@ -217,7 +217,7 @@ if app_mode == "Analysis":
     width1 = st.sidebar.slider("plot width", 1, 25, 10)
 
     # Display a bar chart for the selected variables
-      st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+    st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
 
     st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate")
    
