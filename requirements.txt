@@ -6,4 +6,4 @@ Pillow
 matplotlib
 seaborn
 scikit-learn==1.2.2
-pip install codecarbon
+codecarbon
