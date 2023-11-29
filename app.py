@@ -15,10 +15,14 @@ from sklearn.metrics import r2_score
 from sklearn import metrics as mt
 import subprocess
 import pickle
+import requests
+from io import StringIO
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
 css_url = "https://github.com/jackdoylejackdoyle/ml_flow-FINAL-1/blob/main/custom.css"
+response = requests.get(css_url)
+css_content = response.text
 
 st.markdown(
     f"""
