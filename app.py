@@ -7,6 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as pyplot
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import r2_score
