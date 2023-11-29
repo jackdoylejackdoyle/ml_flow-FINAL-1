@@ -117,7 +117,7 @@ if app_mode == 'Deployment':
     # Load model for prediction
     #logged_model = f'./mlruns/1/a768fe9670c94e098f3ab45564f0db8d/artifacts/top_model_v1'
     #loaded_model = mlflow.pyfunc.load_model(logged_model)
-    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression"])
+    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression","DecisionTreeClassifier"])
     if model_mode == 'LinearRegression': 
       model_filename ='LinearRegression.pkl'
       with open(model_filename, 'rb') as file:
