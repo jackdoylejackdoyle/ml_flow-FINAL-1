@@ -15,31 +15,20 @@ from sklearn.metrics import r2_score
 from sklearn import metrics as mt
 import subprocess
 import pickle
-import requests
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
-# URL of the raw CSS file on GitHub
-css_url = 'https://raw.githubusercontent.com/jackdoylejackdoyle/ml_flow-FINAL-1/main/custom.css'
-
-# Fetch the CSS content from the URL
-response = requests.get(css_url)
-
-# Check if the request was successful
-if response.status_code == 200:
-    # Save the CSS content to a local file
-    with open("custom.css", "w") as css_file:
-        css_file.write(response.text)
-
-    # Apply the custom CSS using st.markdown
-    st.markdown(
-        f"""
-        <style>
-            {response.text}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: #3498db; /* Change to the desired shade of blue */
+            color: #ffffff; /* Change to the desired text color */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     
 # Set the title of the web app
 st.title("Heart Attack Analysis")
