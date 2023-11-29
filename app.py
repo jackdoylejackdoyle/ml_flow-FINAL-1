@@ -16,11 +16,7 @@ from sklearn import metrics as mt
 import subprocess
 import pickle
 
-# Loading Image using PIL
-im = Image.open('App_Icon.jpg')
-im.save("App_Icon.jpg", quality=85)
-# Adding Image to web app
-st.set_page_config(page_title="Heart Attack Analysis App", page_icon = im)
+st.set_page_config(page_title="Heart Attack Analysis App")
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
