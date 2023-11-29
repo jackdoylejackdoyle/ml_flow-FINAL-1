@@ -52,26 +52,26 @@ if app_mode == "Visualization":
   list_variables = df.columns
   symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
 
-    if tab1.button("Show Line Chart"):
-        st.line_chart(data=df, x=symbols[0], y=symbols[1], width=0, height=0, use_container_width=True)
-        tab1.subheader("Line Chart")
-        #tab1.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
-        tab1.write(" ")
+  if tab1.button("Show Line Chart"):
+      st.line_chart(data=df, x=symbols[0], y=symbols[1], width=0, height=0, use_container_width=True)
+      tab1.subheader("Line Chart")
+      #tab1.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
+      tab1.write(" ")
 
-    if tab2.button("Show Bar Chart"):
-        st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
-        tab2.subheader("Bar Chart Tab")
+  if tab2.button("Show Bar Chart"):
+      st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+      tab2.subheader("Bar Chart Tab")
     
-    if tab3.button("Show Correlation Grid"):
-        fig, ax = plt.subplots(figsize=(width1, width1))
-        sns.heatmap(df.corr(), cmap=sns.cubehelix_palette(8), annot=True, ax=ax)
-        tab3.write(fig)
+  if tab3.button("Show Correlation Grid"):
+      fig, ax = plt.subplots(figsize=(width1, width1))
+      sns.heatmap(df.corr(), cmap=sns.cubehelix_palette(8), annot=True, ax=ax)
+      tab3.write(fig)
 
-    if tab4.button("Show Pairplot"):
-        st.markdown("### Pairplot")
-        df2 = df
-        fig3 = sns.pairplot(df2)
-        st.pyplot(fig3)
+  if tab4.button("Show Pairplot"):
+      st.markdown("### Pairplot")
+      df2 = df
+      fig3 = sns.pairplot(df2)
+      st.pyplot(fig3)
   
 
 
