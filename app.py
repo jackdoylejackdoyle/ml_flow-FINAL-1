@@ -25,8 +25,6 @@ tracker = EmissionsTracker()
 tracker.start()
 tracker.stop()
 
-# Set the title of the web app
-st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
@@ -36,6 +34,9 @@ df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': '
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'Au Revoir'])
 
 if app_mode == 'Introduction':
+
+  # Set the title of the web app
+  st.title("Heart Attack Analysis")
   #gif
   gif_path = 'HeartAttackImage.gif'
   width=250
