@@ -15,31 +15,14 @@ from sklearn.metrics import r2_score
 from sklearn import metrics as mt
 import subprocess
 import pickle
+import altair as alt
+from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
-# Include the Google Fonts link for Roboto in the head of the app
-st.markdown(
-    """
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
-    """,
-    unsafe_allow_html=True
-)
-
-# Set the font style for the entire app to Roboto
-st.markdown(
-    """
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+tracker = EmissionsTracker()
+tracker.start()
+tracker.stop()
     
 # Set the title of the web app
 st.title("Heart Attack Analysis")
