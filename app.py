@@ -20,7 +20,7 @@ st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
-df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
+df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': 'Number of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
@@ -134,18 +134,18 @@ if app_mode == 'Deployment':
     #st.write(target_choice)
 
     number1 = st.number_input("Age", value=50)
-    number2 = st.selectbox("Sex (Female = 0 ___ Male = 1)", [0, 1])
-    number3 = st.selectbox("Chest Pain (Typical Angina = 0 ___ Atypical Angina = 1 ___ Non-anginal Pain = 2 ___ Asymptomatic = 3", [0, 1, 2, 3])
+    number2 = st.selectbox("Sex (Female = 0 /// Male = 1)", [0, 1])
+    number3 = st.selectbox("Chest Pain (Typical Angina = 0 /// Atypical Angina = 1 /// Non-anginal Pain = 2 /// Asymptomatic = 3", [0, 1, 2, 3])
     number4 = st.number_input("Systolic Blood Pressure (Normal < 120   ///   Hypertension > 140)", value=130)
     number5 = st.number_input("Cholesterol (Normal < 200   ///   High > 240", value=250)
     number6 = st.selectbox("Resting Blood Sugar (1 = RBS > 120mg   ///   0 = RBS < 120)", [0, 1])
-    number7 = st.number_input(deploy_df.columns[6],1)
-    number8 = st.number_input(deploy_df.columns[7],150)
-    number9 = st.number_input(deploy_df.columns[8],0)
+    number7 = st.selectbox("Resting ECG (0 = Normal /// 1 = ST-T wave normality /// 2 = Left ventricular hypertrophy", [0, 1, 2])
+    number8 = st.number_input("Maximum Heart Rate (Average = 220 - age)", value=170)
+    number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0", [0, 1])
     number10 = st.number_input(deploy_df.columns[9],1)
     number11 = st.number_input(deploy_df.columns[10],1)
     number12 = st.number_input(deploy_df.columns[11],1)
-    number13 = st.number_input(deploy_df.columns[10],2)
+    number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
     data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
          deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7],
