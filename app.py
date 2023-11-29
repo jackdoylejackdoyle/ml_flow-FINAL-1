@@ -124,7 +124,7 @@ if app_mode == 'Deployment':
         loaded_model = pickle.load(file)
 
     if model_mode == 'DecisionTreeClassifier': 
-      model_filename ='DecisionTreeClassifier.pkl'
+      model_filename ='DecisionTreeClassifierName.pkl'
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
 
