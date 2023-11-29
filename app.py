@@ -64,8 +64,8 @@ if app_mode == "Visualization":
 if app_mode == "Prediction":
   # Prediction page to predict wine quality
   st.write("Heart Attack Prediction")
-  X = df.drop(labels="output", axis=1)
-  y = df["output"]
+  X = df.drop(labels="Heart Attack Prediction", axis=1)
+  y = df["Heart Attack Prediction"]
   X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
   lm = LinearRegression()
   lm.fit(X_train,y_train)
@@ -105,18 +105,18 @@ if app_mode == 'Deployment':
     list_var = deploy_df.columns
     #st.write(target_choice)
 
-    number1 = st.number_input(deploy_df.columns[0],0.7)
-    number2 = st.number_input(deploy_df.columns[1],0.04)
-    number3 = st.number_input(deploy_df.columns[2],1.1)
-    number4 = st.number_input(deploy_df.columns[3],0.05)
-    number5 = st.number_input(deploy_df.columns[4],25)
-    number6 = st.number_input(deploy_df.columns[5],20)
-    number7 = st.number_input(deploy_df.columns[6],0.98)
-    number8 = st.number_input(deploy_df.columns[7],1.9)
-    number9 = st.number_input(deploy_df.columns[8],0.4)
-    number10 = st.number_input(deploy_df.columns[9],9.4)
-    number11 = st.number_input(deploy_df.columns[10],5)
-    number12 = st.number_input(deploy_df.columns[11],2)
+    number1 = st.number_input(deploy_df.columns[0],50)
+    number2 = st.number_input(deploy_df.columns[1],0)
+    number3 = st.number_input(deploy_df.columns[2],1)
+    number4 = st.number_input(deploy_df.columns[3],130)
+    number5 = st.number_input(deploy_df.columns[4],245)
+    number6 = st.number_input(deploy_df.columns[5],0)
+    number7 = st.number_input(deploy_df.columns[6],1)
+    number8 = st.number_input(deploy_df.columns[7],150)
+    number9 = st.number_input(deploy_df.columns[8],0)
+    number10 = st.number_input(deploy_df.columns[9],1)
+    number11 = st.number_input(deploy_df.columns[10],1)
+    number12 = st.number_input(deploy_df.columns[11],1)
     number13 = st.number_input(deploy_df.columns[10],2)
 
     data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
