@@ -43,7 +43,7 @@ if app_mode == 'Introduction':
 
   #image
   image_heart = Image.open('heartclipart2.png')
-  st.image(image_heart, width=100)
+  st.image(image_heart, width=250)
 
 if app_mode == "Visualization":
   # Visualization page for plotting graphs
@@ -59,7 +59,7 @@ if app_mode == "Visualization":
 
   #image
   image_heart = Image.open('heartclipart2.png')
-  st.image(image_heart, width=100)
+  st.image(image_heart, width=250)
 
 if app_mode == "Prediction":
   # Prediction page to predict wine quality
@@ -85,7 +85,7 @@ if app_mode == "Prediction":
 
   #image
   image_heart = Image.open('heartclipart2.png')
-  st.image(image_heart, width=100)
+  st.image(image_heart, width=250)
 
 if app_mode == 'Deployment':
     # Deployment page for model deployment
@@ -128,4 +128,4 @@ if app_mode == 'Deployment':
 
     #image
     image_heart = Image.open('heartclipart2.png')
-    st.image(image_heart, width=100)
+    st.image(image_heart, width=250)
