@@ -18,6 +18,7 @@ import pickle
 
 # Loading Image using PIL
 im = Image.open('App_Icon.jpg')
+image.save("App_Icon.jpg", quality=85)
 # Adding Image to web app
 st.set_page_config(page_title="Heart Attack Analysis App", page_icon = im)
 
