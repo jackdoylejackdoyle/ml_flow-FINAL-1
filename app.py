@@ -135,7 +135,7 @@ if app_mode == 'Deployment':
 
     number1 = st.number_input("Age", value=50)
     number2 = st.selectbox("Sex (0 = Female, 1 = Male):", [0, 1])
-    number3 = st.number_input(deploy_df.columns[2],1)
+    number3 = st.selectbox("Chest Pain", [0, 1, 2, 3])
     number4 = st.number_input(deploy_df.columns[3],130)
     number5 = st.number_input(deploy_df.columns[4],245)
     number6 = st.number_input(deploy_df.columns[5],0)
