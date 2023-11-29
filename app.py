@@ -20,6 +20,8 @@ from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
+tracker = EmissionsTracker()
+
 with EmissionsTracker():
     button_clicked = st.button("Click me")
     if button_clicked:
