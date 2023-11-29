@@ -34,7 +34,6 @@ df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': '
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'Au Revoir'])
 
 if app_mode == 'Introduction':
-
   # Set the title of the web app
   st.title("Heart Attack Analysis")
   #gif
@@ -59,6 +58,7 @@ if app_mode == 'Introduction':
   st.image(image_heart, width=250)
 
 if app_mode == "Visualization":
+  st.markdown("# :white[Visualization]")
   # Visualization page for plotting graphs
   list_variables = df.columns
   symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
@@ -91,8 +91,8 @@ if app_mode == "Visualization":
   st.image(image_heart, width=250)
 
 if app_mode == "Prediction":
+  st.markdown("# :white[Prediction]")
   # Prediction page to predict wine quality
-  st.write("Heart Attack Prediction")
   X = df.drop(labels="Heart Attack Prediction", axis=1)
   y = df["Heart Attack Prediction"]
   X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
@@ -157,7 +157,7 @@ if app_mode == "Prediction":
 
 if app_mode == 'Deployment':
     # Deployment page for model deployment
-    st.markdown("# :violet[Deployment]")
+    st.markdown("# :white[Deployment]")
     #id = st.text_input('ID Model', '/content/mlruns/1/0ad40de668d6475dab9dccad85438f40/artifacts/top_model_v1')
 
     # Load model for prediction
