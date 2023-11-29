@@ -18,12 +18,23 @@ import pickle
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
+# Include the Google Fonts link for Roboto in the head of the app
+st.markdown(
+    """
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    """,
+    unsafe_allow_html=True
+)
+
+# Set the font style for the entire app to Roboto
 st.markdown(
     """
     <style>
         body {
-            background-color: #3498db; /* Change to the desired shade of blue */
-            color: #ffffff; /* Change to the desired text color */
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
         }
     </style>
     """,
