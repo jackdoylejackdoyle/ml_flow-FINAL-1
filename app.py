@@ -8,6 +8,7 @@ from PIL import Image
 import matplotlib.pyplot as pyplot
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
@@ -205,3 +206,20 @@ if app_mode == 'Deployment':
     #image
     image_heart = Image.open('heartclipart2.png')
     st.image(image_heart, width=250)
+
+    if app_mode == "Analysis":
+    st.markdown("## Analysis")
+
+# Allow users to select two variables from the dataset for visualization
+    symbols = st.multiselect("Select two variables", list_variables, ["Heart Attack Prediction", "Age"])
+
+    # Create a slider in the sidebar for users to adjust the plot width
+    width1 = st.sidebar.slider("plot width", 1, 25, 10)
+
+    # Display a bar chart for the selected variables
+    st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+
+    st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate")
+    st.markdown("2. There is no correlation between upload time and likes or views.")
+    st.markdown("3. Likes and dislikes are 45% correlated. Observe the large outliers. Few videos have an equal like to dislike ratio.")
+    st.markdown("4. Likes are 10% more correlated to comments than dislikes, thus perhaps people comment more when pleased than when frustrated.")
