@@ -22,14 +22,15 @@ st.title("Heart Attack Analysis")
 df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
-gif_path = 'HeartAttackImage.gif'
-width=250
-st.image(gif_path, width=width)
-
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
 
 if app_mode == 'Introduction':
+  #gif
+  gif_path = 'HeartAttackImage.gif'
+  width=250
+  st.image(gif_path, width=width)
+  
   # Introduction page allowing user to view dataset rows
   num = st.number_input('No of Rows',5,10)
   st.dataframe(df.head(num))
@@ -111,7 +112,7 @@ if app_mode == "Prediction":
 
 if app_mode == 'Deployment':
     # Deployment page for model deployment
-    st.markdown("# :violet[Deployment 🚀]")
+    st.markdown("# :violet[Deployment]")
     #id = st.text_input('ID Model', '/content/mlruns/1/0ad40de668d6475dab9dccad85438f40/artifacts/top_model_v1')
 
     # Load model for prediction
