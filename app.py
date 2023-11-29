@@ -33,7 +33,7 @@ df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 # Sidebar for navigation
-app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
+app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis'])
 
 if app_mode == 'Introduction':
   #gif
