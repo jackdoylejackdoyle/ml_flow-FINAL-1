@@ -67,7 +67,7 @@ if app_mode == "Prediction":
   X = df.drop(labels="Heart Attack Prediction", axis=1)
   y = df["Heart Attack Prediction"]
   X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-  model_mode = st.sidebar.selectbox("Select Model",["LinearRegression"])
+  model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier"])
   if model_mode == 'LinearRegression': 
     lm = LinearRegression()
     lm.fit(X_train,y_train)
@@ -75,6 +75,24 @@ if app_mode == "Prediction":
     st.write(predictions)
 
   
+    # Display performance metrics of the model
+    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
+    st.write("1 The models explains",variance )
+    mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
+    st.write("2 The mean absolute error", mae)
+
+    # Calculating additional metrics
+    mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
+    mse = np.round(mt.mean_squared_error(y_test, predictions),2)
+    r2 = np.round(mt.r2_score(y_test, predictions),2)
+
+  if model_mode == 'DecisionTreeClassifier':
+    lm = DecisionTreeClassifier()
+    lm.fit(X_train,y_train)
+    predictions = lm.predict(X_test)
+    st.write(predictions)
+    
+
     # Display performance metrics of the model
     variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
     st.write("1 The models explains",variance )
@@ -104,6 +122,10 @@ if app_mode == 'Deployment':
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
 
+    if model_mode == 'DecisionTreeClassifier': 
+      model_filename ='DecisionTreeClassifier.pkl'
+      with open(model_filename, 'rb') as file:
+        loaded_model = pickle.load(file)
 
     df = pd.read_csv("heartStats.csv")
     deploy_df= df.drop(labels='output', axis=1)
