@@ -134,7 +134,7 @@ if app_mode == 'Deployment':
     #st.write(target_choice)
 
     number1 = st.number_input(deploy_df.columns[0],50)
-    number2 = st.number_input(deploy_df.columns[1],0)
+    number2 = st.number_input(f"Enter {selected_var}", min_value=0, max_value=1, value=0)
     number3 = st.number_input(deploy_df.columns[2],1)
     number4 = st.number_input(deploy_df.columns[3],130)
     number5 = st.number_input(deploy_df.columns[4],245)
