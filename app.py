@@ -21,8 +21,8 @@ from codecarbon import EmissionsTracker
 st.set_page_config(page_title="Heart Attack Analysis App")
 
 tracker = EmissionsTracker()
- tracker.start()
- tracker.stop()
+tracker.start()
+tracker.stop()
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
