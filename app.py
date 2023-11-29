@@ -209,6 +209,7 @@ if app_mode == 'Deployment':
 
 if app_mode == "Analysis":
   st.markdown("## Analysis")
+  list_variables = df.columns
 
   # Allow users to select two variables from the dataset for visualization
   symbols = st.multiselect("Select two variables", list_variables, ["Heart Attack Prediction", "Age"])
