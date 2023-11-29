@@ -144,7 +144,7 @@ if app_mode == 'Deployment':
     number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0", [0, 1])
     number10 = st.number_input(deploy_df.columns[9],1)
     number11 = st.number_input(deploy_df.columns[10],1)
-    number12 = st.number_input(deploy_df.columns[11],1)
+    number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
     number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
     data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
