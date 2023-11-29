@@ -133,7 +133,7 @@ if app_mode == 'Deployment':
     list_var = deploy_df.columns
     #st.write(target_choice)
 
-    number1 = st.number_input(deploy_df.columns[0],50)
+    number1 = st.number_input("Age", value=50)
     number2 = st.selectbox("Sex (0 = Female, 1 = Male):", [0, 1])
     number3 = st.number_input(deploy_df.columns[2],1)
     number4 = st.number_input(deploy_df.columns[3],130)
