@@ -211,14 +211,19 @@ if app_mode == "Analysis":
   st.markdown("## Analysis")
   list_variables = df.columns
 
+
   # Allow users to select two variables from the dataset for visualization
-  symbols = st.multiselect("Select two variables", list_variables, ["Heart Attack Prediction", "Age"])
+  symbols = st.multiselect("Select two variables", list_variables, ["Age", "Heart Attack Prediction"])
 
   # Create a slider in the sidebar for users to adjust the plot width
   width1 = st.sidebar.slider("plot width", 1, 25, 10)
 
   # Display a bar chart for the selected variables
   st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+  #image
+  image_joke = Image.open('thatsallfolks.jpg')
+  st.image(image_joke, width=250)
 
-  st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate")
-   
+  st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate, Peak Exercise ST Segment, and Chest Pain.")
+  st.markdown("1. Heart Attack is highest between 41 and 59 years of age.")
+  
