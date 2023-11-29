@@ -208,16 +208,16 @@ if app_mode == 'Deployment':
     st.image(image_heart, width=250)
 
 if app_mode == "Analysis":
-    st.markdown("## Analysis")
+  st.markdown("## Analysis")
 
-    # Allow users to select two variables from the dataset for visualization
-    symbols = st.multiselect("Select two variables", list_variables, ["Heart Attack Prediction", "Age"])
+  # Allow users to select two variables from the dataset for visualization
+  symbols = st.multiselect("Select two variables", list_variables, ["Heart Attack Prediction", "Age"])
 
-    # Create a slider in the sidebar for users to adjust the plot width
-    width1 = st.sidebar.slider("plot width", 1, 25, 10)
+  # Create a slider in the sidebar for users to adjust the plot width
+  width1 = st.sidebar.slider("plot width", 1, 25, 10)
 
-    # Display a bar chart for the selected variables
-    st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+  # Display a bar chart for the selected variables
+  st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
 
-    st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate")
+  st.markdown("1. Heart Attack Risk is highly correlated to Max Heart Rate")
    
