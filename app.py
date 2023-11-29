@@ -75,16 +75,16 @@ if app_mode == "Prediction":
     st.write(predictions)
 
   
-  # Display performance metrics of the model
-  variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
-  st.write("1 The models explains",variance )
-  mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
-  st.write("2 The mean absolute error", mae)
+    # Display performance metrics of the model
+    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
+    st.write("1 The models explains",variance )
+    mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
+    st.write("2 The mean absolute error", mae)
 
-  # Calculating additional metrics
-  mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
-  mse = np.round(mt.mean_squared_error(y_test, predictions),2)
-  r2 = np.round(mt.r2_score(y_test, predictions),2)
+    # Calculating additional metrics
+    mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
+    mse = np.round(mt.mean_squared_error(y_test, predictions),2)
+    r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   #image
   image_heart = Image.open('heartclipart2.png')
