@@ -20,15 +20,14 @@ from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Heart Attack Analysis App")
 
-tracker = EmissionsTracker()
-
-with EmissionsTracker():
+with EmissionsTracker() as tracker:
+    # Example code that might contribute to carbon emissions
     button_clicked = st.button("Click me")
     if button_clicked:
         st.write("Button clicked!")
 
 # Display the estimated carbon footprint
-st.write(f"Estimated carbon footprint: {tracker.emissions()} kgCO2")
+st.write(f"Estimated carbon footprint: {tracker.total_emissions} kgCO2")
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
