@@ -48,7 +48,7 @@ if app_mode == 'Introduction':
 if app_mode == "Visualization":
   # Visualization page for plotting graphs
   list_variables = df.columns
-  symbols = st.multiselect("Select two variables",list_variables, ["age", "cp"])
+  symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
   st.line_chart(data=df, x=symbols[0], y=symbols[1])
   st.bar_chart(data=df, x=symbols[0], y=symbols[1])
 
