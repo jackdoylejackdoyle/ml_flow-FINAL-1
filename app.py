@@ -51,13 +51,29 @@ if app_mode == "Visualization":
   # Visualization page for plotting graphs
   list_variables = df.columns
   symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
-  st.line_chart(data=df, x=symbols[0], y=symbols[1])
-  st.bar_chart(data=df, x=symbols[0], y=symbols[1])
 
-  # Pairplot for selected variables
-  df2 = df[[list_variables[0],list_variables[1],list_variables[2],list_variables[3]]]
-  fig = sns.pairplot(df2)
-  st.pyplot(fig)
+    if tab1.button("Show Line Chart"):
+        st.line_chart(data=df, x=symbols[0], y=symbols[1], width=0, height=0, use_container_width=True)
+        tab1.subheader("Line Chart")
+        #tab1.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
+        tab1.write(" ")
+
+    if tab2.button("Show Bar Chart"):
+        st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+        tab2.subheader("Bar Chart Tab")
+    
+    if tab3.button("Show Correlation Grid"):
+        fig, ax = plt.subplots(figsize=(width1, width1))
+        sns.heatmap(df.corr(), cmap=sns.cubehelix_palette(8), annot=True, ax=ax)
+        tab3.write(fig)
+
+    if tab4.button("Show Pairplot"):
+        st.markdown("### Pairplot")
+        df2 = df
+        fig3 = sns.pairplot(df2)
+        st.pyplot(fig3)
+  
+
 
   #image
   image_heart = Image.open('heartclipart2.png')
