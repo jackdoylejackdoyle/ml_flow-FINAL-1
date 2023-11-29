@@ -128,8 +128,7 @@ if app_mode == 'Deployment':
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
 
-    df = pd.read_csv("heartStats.csv")
-    deploy_df= df.drop(labels='output', axis=1)
+    deploy_df= df.drop(labels='Heart Attack Prediction', axis=1)
     list_var = deploy_df.columns
     #st.write(target_choice)
 
