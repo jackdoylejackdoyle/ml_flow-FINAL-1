@@ -26,7 +26,7 @@ with EmissionsTracker():
         st.write("Button clicked!")
 
 # Display the estimated carbon footprint
-st.write(f"Estimated carbon footprint: {EmissionsTracker().total_emissions} kgCO2")
+st.write(f"Estimated carbon footprint: {tracker.emissions()} kgCO2")
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
