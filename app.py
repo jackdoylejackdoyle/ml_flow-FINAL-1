@@ -164,6 +164,9 @@ if app_mode == 'Deployment':
       model_filename ='kneighbors.pkl'
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
+
+      deploy_df= df.drop(labels='Heart Attack Prediction', axis=1)
+      list_var = deploy_df.columns
         
       number1 = st.number_input("Age", value=50)
       number2 = st.selectbox("Sex (Female = 0 /// Male = 1)", [0, 1])
@@ -188,6 +191,9 @@ if app_mode == 'Deployment':
       model_filename ='DecisionTreeClassifierName.pkl'
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
+
+      deploy_df= df.drop(labels='Heart Attack Prediction', axis=1)
+      list_var = deploy_df.columns
 
       number1 = st.number_input("Age", value=50)
       number2 = st.selectbox("Sex (Female = 0 /// Male = 1)", [0, 1])
