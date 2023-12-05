@@ -159,7 +159,7 @@ if app_mode == 'Deployment':
     # Load model for prediction
     #logged_model = f'./mlruns/1/a768fe9670c94e098f3ab45564f0db8d/artifacts/top_model_v1'
     #loaded_model = mlflow.pyfunc.load_model(logged_model)
-    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression","DecisionTreeClassifier", "LogisticRegression"])
+    model_mode = st.sidebar.selectbox("Select Model",["KNN","DecisionTreeClassifier", "LogisticRegression"])
     if model_mode == 'KNN': 
       model_filename ='kneighbors.pkl'
       with open(model_filename, 'rb') as file:
@@ -179,11 +179,9 @@ if app_mode == 'Deployment':
       number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
-      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
-         deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7],
-         deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
-    # Predict on a Pandas DataFrame.
-    #import pandas as pd
+      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
+      # Predict on a Pandas DataFrame.
+      #import pandas as pd
       st.write("Prediction :", np.round(loaded_model.predict(data_new)[0],2))
 
     if model_mode == 'DecisionTreeClassifier': 
@@ -205,10 +203,7 @@ if app_mode == 'Deployment':
       number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
-      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
-         deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7],
-         deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
-  
+      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
       # Predict on a Pandas DataFrame.
       #import pandas as pd
       st.write("Prediction :", np.round(loaded_model.predict(data_new)[0],2))
@@ -236,14 +231,12 @@ if app_mode == 'Deployment':
       number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
-      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],
-         deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7],
-         deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
-    # Predict on a Pandas DataFrame.
-    #import pandas as pd
+      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
+      # Predict on a Pandas DataFrame.
+      #import pandas as pd
       st.write("Prediction :", np.round(loaded_model.predict(data_new)[0],2))
 
-    #image
+      #image
       image_heart = Image.open('heartclipart2.png')
       st.image(image_heart, width=250)
 
