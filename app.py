@@ -10,6 +10,7 @@ import seaborn as sns
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import r2_score
@@ -125,8 +126,7 @@ if app_mode == "Prediction":
     
 
     # Display performance metrics of the model
-    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
-    st.write("1 The models explains",variance )
+    st.write("1) The model explains", confusion_matrix(y_test, y_pred),"% variance of the target feature")
     mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
     st.write("2 The mean absolute error", mae)
 
