@@ -110,7 +110,7 @@ if app_mode == "Prediction":
   
     # Display performance metrics of the model
     accuracy = accuracy_score(y_test, predictions)
-    accuracy2 = round(accuracy, 2)
+    accuracy2 = (round(accuracy, 2))*100
     st.write("1 The accuracy of this model is", accuracy2, "%")
 
 
