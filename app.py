@@ -10,6 +10,7 @@ import seaborn as sns
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import r2_score
@@ -108,15 +109,9 @@ if app_mode == "Prediction":
 
   
     # Display performance metrics of the model
-    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
-    st.write("1 The models explains",variance )
-    mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
-    st.write("2 The mean absolute error", mae)
+    accuracy = accuracy_score(y_test, predictions)
+    st.write("1 The accuracy of this model is", accuracy )
 
-    # Calculating additional metrics
-    mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
-    mse = np.round(mt.mean_squared_error(y_test, predictions),2)
-    r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   if model_mode == 'DecisionTreeClassifier':
     X = df.drop(labels="Heart Attack Prediction", axis=1)
@@ -129,15 +124,9 @@ if app_mode == "Prediction":
     
 
     # Display performance metrics of the model
-    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
-    st.write("1 The models explains",variance )
-    mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
-    st.write("2 The mean absolute error", mae)
+    accuracy = accuracy_score(y_test, predictions)
+    st.write("1 The accuracy of this model is", accuracy )
 
-    # Calculating additional metrics
-    mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
-    mse = np.round(mt.mean_squared_error(y_test, predictions),2)
-    r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   if model_mode == 'LogisticRegression':
     X = df.drop(labels="Heart Attack Prediction", axis=1)
@@ -148,17 +137,9 @@ if app_mode == "Prediction":
     predictions = lm.predict(X_test)
     st.write(predictions)
     
-
     # Display performance metrics of the model
-    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
-    st.write("1 The models explains",variance )
-    mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
-    st.write("2 The mean absolute error", mae)
-
-    # Calculating additional metrics
-    mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
-    mse = np.round(mt.mean_squared_error(y_test, predictions),2)
-    r2 = np.round(mt.r2_score(y_test, predictions),2)
+    accuracy = accuracy_score(y_test, predictions)
+    st.write("1 The accuracy of this model is", accuracy )
 
   #image
   image_heart = Image.open('heartclipart2.png')
