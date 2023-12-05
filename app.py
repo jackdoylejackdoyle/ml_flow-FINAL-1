@@ -98,7 +98,7 @@ if app_mode == "Prediction":
   model_mode = st.sidebar.selectbox("Select Model",["KNN", "DecisionTreeClassifier", "LogisticRegression"])
   
   if model_mode == 'KNN':
-    st.markdown("# :red[KNN]")
+    st.markdown("# :red[KNN Prediction]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
@@ -115,7 +115,7 @@ if app_mode == "Prediction":
 
 
   if model_mode == 'DecisionTreeClassifier':
-    st.markdown("# :red[DecisionTreeClassifier]")
+    st.markdown("# :red[DecisionTreeClassifier Prediction]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
@@ -132,7 +132,7 @@ if app_mode == "Prediction":
 
 
   if model_mode == 'LogisticRegression':
-    st.markdown("# :red[LogisticRegression]")
+    st.markdown("# :red[LogisticRegression Prediction]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
