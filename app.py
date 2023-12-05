@@ -267,8 +267,8 @@ if app_mode == "Analysis":
   st.markdown("1. Risk of heart attack is most highly correlated with variables Max Heart Rate, Peak Exercise ST Segment, and Chest Pain.")
   st.markdown("1. Risk of heart attack is highest between 41 and 59 years of age, according to this data set.")
 
-tab1 = st.tabs("Feeling Lucky?")
-if tab1.button("Feeling Lucky"):
+tabreal = st.tabs("Feeling Lucky?")
+if tabreal.button("Feeling Lucky"):
   image_joke = Image.open('thatsallfolks.jpg')
   st.image(image_joke, width=750)
 
