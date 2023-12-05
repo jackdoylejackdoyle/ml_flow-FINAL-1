@@ -94,7 +94,7 @@ if app_mode == "Prediction":
   st.markdown("# :red[Prediction]")
   # Prediction page to predict wine quality
 
-  X = df.drop(labels="Heart Attack Prediction", axis=1)
+  X = df.drop(labels="Blah", axis=1)
   y = df["Heart Attack Prediction"]
   X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
   model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
