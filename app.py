@@ -32,7 +32,7 @@ df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 # Sidebar for navigation
-app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'Au Revoir'])
+app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'CLICK'])
 
 if app_mode == 'Introduction':
   # Set the title of the web app
@@ -139,7 +139,8 @@ if app_mode == "Prediction":
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write(predictions)
+    st.write("Heart Attack Prediction:", predictions)
+   
     
     # Display performance metrics of the model
     accuracy = accuracy_score(y_test, predictions)
