@@ -98,7 +98,7 @@ if app_mode == "Prediction":
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-  model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
+    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
     lm = LinearRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
