@@ -92,13 +92,13 @@ if app_mode == "Visualization":
   st.image(image_heart, width=250)
 
 if app_mode == "Prediction":
-  st.markdown("# :red[Prediction]")
   # Prediction page to predict wine quality
 
   
   model_mode = st.sidebar.selectbox("Select Model",["KNN", "DecisionTreeClassifier", "LogisticRegression"])
   
   if model_mode == 'KNN':
+    st.markdown("# :red[KNN]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
@@ -115,6 +115,7 @@ if app_mode == "Prediction":
 
 
   if model_mode == 'DecisionTreeClassifier':
+    st.markdown("# :red[DecisionTreeClassifier]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
@@ -131,6 +132,7 @@ if app_mode == "Prediction":
 
 
   if model_mode == 'LogisticRegression':
+    st.markdown("# :red[LogisticRegression]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
