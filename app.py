@@ -267,13 +267,7 @@ if app_mode == "Analysis":
   st.markdown("1. Risk of heart attack is most highly correlated with variables Max Heart Rate, Peak Exercise ST Segment, and Chest Pain.")
   st.markdown("1. Risk of heart attack is highest between 41 and 59 years of age, according to this data set.")
 
-width1 = st.sidebar.slider("plot width", 1, 25, 10)
-tab1, tab2, tab3, tab4 = st.tabs(["Line Chart", "Blah", "RAW", "SAw"])
-if tab1.button("Feeling Lucky?"):
-    st.line_chart(data=df, x=symbols[0], y=symbols[1], width=0, height=0, use_container_width=True)
-    tab1.subheader("Line Chart")
-    #tab1.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
-    tab1.write(" ")
+if st.button("Feeling Lucky?"):
     image_joke = Image.open('thatsallfolks.jpg')
     st.image(image_joke, width=750)
 
