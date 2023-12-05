@@ -267,10 +267,25 @@ if app_mode == "Analysis":
   st.markdown("1. Risk of heart attack is most highly correlated with variables Max Heart Rate, Peak Exercise ST Segment, and Chest Pain.")
   st.markdown("1. Risk of heart attack is highest between 41 and 59 years of age, according to this data set.")
 
-  st.markdown("<br><br><br>", unsafe_allow_html=True)
-  if st.button("Feeling Lucky?"):
+  # Define a session state to store the button click status
+
+  class SessionState:
+  def __init__(self):
+        self.button_clicked = False
+
+  # Create an instance of the session state
+  session_state = SessionState()
+
+  # Create a button
+  if not session_state.button_clicked:
+    if st.button("Feeling Lucky?"):
+        session_state.button_clicked = True
+
+  # Display content based on button click status
+  if session_state.button_clicked:
     image_joke = Image.open('thatsallfolks.jpg')
     st.image(image_joke, width=750)
+
 
 
 
