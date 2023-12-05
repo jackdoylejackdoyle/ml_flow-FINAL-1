@@ -273,18 +273,17 @@ if app_mode == "Analysis":
     def __init__(self):
         self.button_clicked = False
 
-# Create an instance of the session state
-session_state = SessionState()
+  # Create an instance of the session state
+  session_state = SessionState()
 
-# Create a button
-if not session_state.button_clicked:
+  # Create a button
+  if not session_state.button_clicked:
     if st.button("Feeling Lucky?"):
         session_state.button_clicked = True
 
-# Display content based on button click status
-if session_state.button_clicked:
-    image_joke = Image.open('thatsallfolks.jpg')
-    st.image(image_joke, width=750)
+  # Display content based on button click status
+  if session_state.button_clicked:
+    st.image(Image.open('thatsallfolks.jpg'), width=750)
 
 
 
