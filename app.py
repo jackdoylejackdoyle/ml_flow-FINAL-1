@@ -165,7 +165,7 @@ if app_mode == 'Deployment':
     #loaded_model = mlflow.pyfunc.load_model(logged_model)
     model_mode = st.sidebar.selectbox("Select Model",["LinearRegression","DecisionTreeClassifier", "LogisticRegression"])
     if model_mode == 'LinearRegression': 
-      model_filename ='LinearRegressionName.pkl'
+      model_filename ='LinearRegression2.pkl'
       with open(model_filename, 'rb') as file:
         loaded_model = pickle.load(file)
 
