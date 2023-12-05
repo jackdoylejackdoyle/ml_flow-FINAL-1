@@ -240,7 +240,7 @@ if app_mode == 'Deployment':
       data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
       # Predict on a Pandas DataFrame.
       #import pandas as pd
-      st.write("Prediction :", np.round(loaded_model.predict(data_new)[0],2))
+      st.write("Prediction (0 = Heart Attack // 1 = No Heart Attack :", np.round(loaded_model.predict(data_new)[0],2))
 
       #image
       image_heart = Image.open('heartclipart2.png')
