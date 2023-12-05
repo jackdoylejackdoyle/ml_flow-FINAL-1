@@ -93,12 +93,13 @@ if app_mode == "Visualization":
 if app_mode == "Prediction":
   st.markdown("# :red[Prediction]")
   # Prediction page to predict wine quality
+
+  X = df.drop(labels="Heart Attack Prediction", axis=1)
+  y = df["Heart Attack Prediction"]
+  X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
+  model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
   
   if model_mode == 'LinearRegression':
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
-    y = df["Heart Attack Prediction"]
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
     lm = LinearRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
@@ -117,10 +118,6 @@ if app_mode == "Prediction":
     r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   if model_mode == 'DecisionTreeClassifier':
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
-    y = df["Heart Attack Prediction"]
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
@@ -139,10 +136,6 @@ if app_mode == "Prediction":
     r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   if model_mode == 'LogisticRegression':
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
-    y = df["Heart Attack Prediction"]
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-    model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
