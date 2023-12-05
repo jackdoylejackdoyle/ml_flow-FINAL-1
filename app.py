@@ -270,8 +270,8 @@ if app_mode == "Analysis":
   # Define a session state to store the button click status
 
   class SessionState:
-  def __init__(self):
-        self.button_clicked = False
+    def __init__(self):
+      self.button_clicked = False
 
   # Create an instance of the session state
   session_state = SessionState()
