@@ -120,10 +120,8 @@ if app_mode == "Prediction":
   if model_mode == 'DecisionTreeClassifier':
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
-    y_pred = lm.predict(X_test)
     predictions = lm.predict(X_test)
     st.write(predictions)
-    y_true = df["Heart Attack Prediction"]
     
 
     # Display performance metrics of the model
