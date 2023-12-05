@@ -126,7 +126,8 @@ if app_mode == "Prediction":
 
     # Display performance metrics of the model
     accuracy = accuracy_score(y_test, predictions)
-    st.write("1 The accuracy of this model is", accuracy )
+    accuracy2 = int(round(accuracy, 2) * 100)
+    st.write("1 The accuracy of this model is", accuracy2, "%")
 
 
   if model_mode == 'LogisticRegression':
@@ -140,7 +141,8 @@ if app_mode == "Prediction":
     
     # Display performance metrics of the model
     accuracy = accuracy_score(y_test, predictions)
-    st.write("1 The accuracy of this model is", accuracy )
+    accuracy2 = int(round(accuracy, 2) * 100)
+    st.write("1 The accuracy of this model is", accuracy2, "%")
 
   #image
   image_heart = Image.open('heartclipart2.png')
@@ -218,6 +220,6 @@ if app_mode == "Analysis":
   st.markdown("1. Risk of heart attack is highest between 41 and 59 years of age, according to this data set.")
 
 
-if app_mode == "Au Revoir":
+if app_mode == "CLICK":
   image_joke = Image.open('thatsallfolks.jpg')
   st.image(image_joke, width=750)
