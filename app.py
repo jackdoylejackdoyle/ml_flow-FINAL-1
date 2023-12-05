@@ -195,6 +195,9 @@ if app_mode == 'Deployment':
       deploy_df= df.drop(labels='Heart Attack Prediction', axis=1)
       list_var = deploy_df.columns
 
+      deploy_df= df.drop(labels='Heart Attack Prediction', axis=1)
+      list_var = deploy_df.columns
+        
       number1 = st.number_input("Age", value=50)
       number2 = st.selectbox("Sex (Female = 0 /// Male = 1)", [0, 1])
       number3 = st.selectbox("Chest Pain (Typical Angina = 0 /// Atypical Angina = 1 /// Non-anginal Pain = 2 /// Asymptomatic = 3)", [0, 1, 2, 3])
@@ -202,17 +205,17 @@ if app_mode == 'Deployment':
       number5 = st.number_input("Cholesterol (Normal < 200   ///   High > 240", value=250)
       number6 = st.selectbox("Resting Blood Sugar (1 = RBS > 120mg   ///   0 = RBS < 120)", [0, 1])
       number7 = st.selectbox("Resting ECG (0 = Normal /// 1 = ST-T wave normality /// 2 = Left ventricular hypertrophy", [0, 1, 2])
-      number8 = st.number_input("Maximum Heart Rate (Average Max Heart Rate = (220 - [age of patient]", value=170)
-      number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0)", [0, 1])
-      number10 = st.number_input("ST depression induced by exercise relative to rest (lower is healthier)", value=3)
-      number11 = st.selectbox("Slope of the peak exercise ST segment (0 = upsloping // 1 = flat // 2 = downsloping)", [0, 1, 2])
-      number12 = st.selectbox("Number of Major Vessels Colored By Fluoroscopy", [0, 1, 2, 3])
-      number13 = st.selectbox("Thallium Reversable Defect (1 = fixed defect // 2 = normal blood flow // 3 = reversible defect) ", [1, 2, 3])
+      number8 = st.number_input("Maximum Heart Rate (Average Max Heart Rate = (220 - [age of patient])", value=170)
+      number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0", [0, 1])
+      number10 = st.selectbox("Previous Peak", [0, 1, 2, 3, 4, 5, 6, 7])
+      number11 = st.selectbox("Slope", [0, 1, 2])
+      number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
+      number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
-      data_new2 = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
+      data_new = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3],deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
       # Predict on a Pandas DataFrame.
       #import pandas as pd
-      st.write("Prediction (0 = Presence of Heart Disease // 1 = Free of Heart Disease) :", np.round(loaded_model.predict(data_new2)[0],2))
+      st.write("Prediction (0 = Presence of Heart Disease // 1 = Free of Heart Disease) :", np.round(loaded_model.predict(data_new)[0],2))
 
     if model_mode == 'LogisticRegression': 
       model_filename ='LogisticRegressionName.pkl'
@@ -243,8 +246,9 @@ if app_mode == 'Deployment':
       st.write("Prediction (0 = Presence of Heart Disease // 1 = Free of Heart Disease) :", np.round(loaded_model.predict(data_new3)[0],2))
 
       #image
-      image_heart = Image.open('heartclipart2.png')
-      st.image(image_heart, width=250)
+      
+    image_heart = Image.open('heartclipart2.png')
+    st.image(image_heart, width=250)
 
 if app_mode == "Analysis":
   st.markdown("# :red[Analysis]")
