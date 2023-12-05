@@ -127,7 +127,8 @@ if app_mode == "Prediction":
     
 
     # Display performance metrics of the model
-    st.write("1) The model explains", confusion_matrix(y_test, predictions),"% variance of the target feature")
+    variance = np.round(metrics.explained_variance_score(y_test, predictions)*100,2)
+    st.write("1 The models explains",variance )
     mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
     st.write("2 The mean absolute error", mae)
 
