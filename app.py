@@ -124,6 +124,7 @@ if app_mode == "Prediction":
     y_pred = lm.predict(X_test)
     predictions = lm.predict(X_test)
     st.write(predictions)
+    y_true = df["Heart Attack Prediction"]
     
 
     # Display performance metrics of the model
