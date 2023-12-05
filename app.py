@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import matplotlib.pyplot as pyplot
 import seaborn as sns
-from sklearn.linear_model import LinearRegression
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
@@ -95,13 +95,13 @@ if app_mode == "Prediction":
   # Prediction page to predict wine quality
 
   
-  model_mode = st.sidebar.selectbox("Select Model",["LinearRegression", "DecisionTreeClassifier", "LogisticRegression"])
+  model_mode = st.sidebar.selectbox("Select Model",["KNN", "DecisionTreeClassifier", "LogisticRegression"])
   
-  if model_mode == 'LinearRegression':
+  if model_mode == 'KNN':
     X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
-    lm = LinearRegression()
+    lm = KNeighborsClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
     st.write(predictions)
@@ -140,6 +140,9 @@ if app_mode == "Prediction":
     r2 = np.round(mt.r2_score(y_test, predictions),2)
 
   if model_mode == 'LogisticRegression':
+    X = df.drop(labels="Heart Attack Prediction", axis=1)
+    y = df["Heart Attack Prediction"]
+    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
