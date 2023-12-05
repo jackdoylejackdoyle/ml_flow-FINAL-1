@@ -32,7 +32,7 @@ df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect','output': 'Heart Attack Prediction'})
 
 # Sidebar for navigation
-app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis', 'CLICK'])
+app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment','Analysis'])
 
 if app_mode == 'Introduction':
   # Set the title of the web app
@@ -105,7 +105,7 @@ if app_mode == "Prediction":
     lm = KNeighborsClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write(predictions)
+    st.write("Heart Attack Prediction", predictions)
 
   
     # Display performance metrics of the model
@@ -122,7 +122,7 @@ if app_mode == "Prediction":
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write(predictions)
+    st.write("Heart Attack Prediction", predictions)
     
 
     # Display performance metrics of the model
@@ -139,7 +139,7 @@ if app_mode == "Prediction":
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Attack Prediction:", predictions)
+    st.write("Heart Attack Prediction", predictions)
    
     
     # Display performance metrics of the model
@@ -188,8 +188,8 @@ if app_mode == 'Deployment':
     number7 = st.selectbox("Resting ECG (0 = Normal /// 1 = ST-T wave normality /// 2 = Left ventricular hypertrophy", [0, 1, 2])
     number8 = st.number_input("Maximum Heart Rate (Average Max Heart Rate = (220 - [age of patient])", value=170)
     number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0", [0, 1])
-    number10 = st.number_input(deploy_df.columns[9],1)
-    number11 = st.number_input(deploy_df.columns[10],1)
+    number10 = st.selectbox("Previous Peak", [0, 1, 2, 3, 4, 5, 6, 7])
+    number11 = st.selectbox("Slope", [0, 1, 2])
     number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
     number13 = st.selectbox("Thallium Reversable Defect", [0, 1, 2, 3])
 
