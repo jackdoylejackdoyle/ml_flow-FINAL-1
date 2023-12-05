@@ -121,12 +121,14 @@ if app_mode == "Prediction":
   if model_mode == 'DecisionTreeClassifier':
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
+    y_pred = lm.predict(X_test)
     predictions = lm.predict(X_test)
     st.write(predictions)
     
 
     # Display performance metrics of the model
-    st.write("1) The model explains", confusion_matrix(y_test, y_pred),"% variance of the target feature")
+    variance_explained = explained_variance_score(y_true, y_pred)
+    st.write(f"Percentage Variance Explained: {variance_explained * 100:.2f}%")
     mae = np.round(metrics.mean_absolute_error(y_test,predictions),2)
     st.write("2 The mean absolute error", mae)
 
