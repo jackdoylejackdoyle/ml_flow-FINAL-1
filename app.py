@@ -267,8 +267,8 @@ if app_mode == "Analysis":
 
 
   st.markdown("1. Heart disease is most correlated with the following variables: maximum heart rate, slope of peak exercise ST segment, and chest pain (presence and/or type of angina).")
-  st.markdown("2. Heart disease is highest between 41 and 59 years of age.")
-  st.markdown("3. Our most accurate model uses Logistic Regression while our least accurate model uses KNN.")
+  st.markdown("2. Heart disease is most common in this set between 41 and 59 years of age.")
+  st.markdown("3. The most accurate model uses Logistic Regression while the least accurate model uses KNN.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
   st.write("In order to improve this model, we should consult with expert cardiologists to understand the most relevant factors and indicators of heart disease.")
 
