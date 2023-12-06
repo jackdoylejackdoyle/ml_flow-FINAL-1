@@ -271,7 +271,7 @@ if app_mode == "Analysis":
   st.markdown("3. Heart disease is most common in this set between 41 and 59 years of age.")
   st.markdown("4. The most accurate model uses Logistic Regression while the least accurate model uses KNN.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
-  st.write("In order to improve this model, we should consult with expert cardiologists to understand the most relevant factors and indicators of heart disease.")
+  st.write("In order to improve this model, we should consult with expert cardiologists to understand the most relevant factors and indicators of heart disease. One limitation of this application is the size of the dataset, comprising only 304 rows or patients.")
 
   # Define a session state to store the button click status
 
