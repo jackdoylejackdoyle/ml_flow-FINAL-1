@@ -268,10 +268,10 @@ if app_mode == "Analysis":
 
   st.markdown("1. Heart disease is most correlated with the following variables: maximum heart rate, exercise induced angina, numnber of blood vessels colored by fluoroscopy, slope of peak exercise ST segment, and chest pain (presence and/or type of angina).")
   st.markdown("2. Interestingly, blood pressure and cholesterol are very weakly correlated with heart disease in this set.")
-  st.markdown("3. Heart disease is most common in this set between 41 and 59 years of age.")
-  st.markdown("4. The most accurate model uses Logistic Regression while the least accurate model uses KNN.")
+  st.markdown("3. Heart disease is most common between 41 and 59 years of age.")
+  st.markdown("4. Logistic Regression is most accurate for this set, followed by DecisionTreeClassification and KNN in descending order.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
-  st.write("In order to improve this model, we should consult with expert cardiologists to understand the most relevant factors and indicators of heart disease. One limitation of this application is the size of the dataset, comprising only 304 rows or patients.")
+  st.write("Consulting expert cardiologists on the most relevant factors and indicators of heart disease would improve this model and dataset. This application is limited by the relatively small dataset of only 304 patients.")
 
   # Define a session state to store the button click status
 
