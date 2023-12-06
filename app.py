@@ -180,7 +180,7 @@ if app_mode == 'Deployment':
       number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0)", [0, 1])
       number10 = st.number_input("ST depression induced by exercise relative to rest (lower is healthier)", value=3)
       number11 = st.selectbox("Slope of the peak exercise ST segment (0 = upsloping // 1 = flat // 2 = downsloping)", [0, 1, 2])
-      number12 = st.selectbox("Number of Major Vessels Colored By Fluoroscopy", [0, 1, 2, 3])
+      number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect (1 = fixed defect // 2 = normal blood flow // 3 = reversible defect) ", [1, 2, 3])
 
       data_new3 = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
@@ -208,7 +208,7 @@ if app_mode == 'Deployment':
       number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0)", [0, 1])
       number10 = st.number_input("ST depression induced by exercise relative to rest (lower is healthier)", value=3)
       number11 = st.selectbox("Slope of the peak exercise ST segment (0 = upsloping // 1 = flat // 2 = downsloping)", [0, 1, 2])
-      number12 = st.selectbox("Number of Major Vessels Colored By Fluoroscopy", [0, 1, 2, 3])
+      number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect (1 = fixed defect // 2 = normal blood flow // 3 = reversible defect) ", [1, 2, 3])
 
       data_new3 = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
@@ -236,7 +236,7 @@ if app_mode == 'Deployment':
       number9 = st.selectbox("Exercise Induced Angina (Yes = 1 /// No = 0)", [0, 1])
       number10 = st.number_input("ST depression induced by exercise relative to rest (lower is healthier)", value=3)
       number11 = st.selectbox("Slope of the peak exercise ST segment (0 = upsloping // 1 = flat // 2 = downsloping)", [0, 1, 2])
-      number12 = st.selectbox("Number of Major Vessels Colored By Fluoroscopy", [0, 1, 2, 3])
+      number12 = st.selectbox("Number of Major Vessels Covered By Fluoroscopy", [0, 1, 2, 3])
       number13 = st.selectbox("Thallium Reversable Defect (1 = fixed defect // 2 = normal blood flow // 3 = reversible defect) ", [1, 2, 3])
 
       data_new3 = pd.DataFrame({deploy_df.columns[0]:[number1], deploy_df.columns[1]:[number2], deploy_df.columns[2]:[number3], deploy_df.columns[3]:[number4], deploy_df.columns[4]:[number5], deploy_df.columns[5]:[number6], deploy_df.columns[6]:[number7], deploy_df.columns[7]:[number8], deploy_df.columns[8]:[number9],deploy_df.columns[9]:[number10],deploy_df.columns[10]:[number11],deploy_df.columns[11]:[12],deploy_df.columns[12]:[13]})
