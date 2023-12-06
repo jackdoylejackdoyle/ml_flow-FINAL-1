@@ -105,7 +105,7 @@ if app_mode == "Prediction":
     lm = KNeighborsClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
+    st.write("0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
 
   
     # Display performance metrics of the model
@@ -122,7 +122,7 @@ if app_mode == "Prediction":
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
+    st.write("0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
     
 
     # Display performance metrics of the model
@@ -139,7 +139,7 @@ if app_mode == "Prediction":
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
+    st.write("0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
    
     
     # Display performance metrics of the model
