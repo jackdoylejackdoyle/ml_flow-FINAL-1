@@ -102,12 +102,12 @@ if app_mode == "Prediction":
   if model_mode == 'KNN':
     st.markdown("# :red[KNN Prediction]")
     X = df.drop(labels="Heart Attack Prediction", axis=1)
-    y = df["Heart Attack Prediction"]
+    y = df["Heart Attack Predictiont"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = KNeighborsClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Attack Prediction", predictions)
+    st.write("Heart Disease Assessment", predictions)
 
   
     # Display performance metrics of the model
@@ -124,7 +124,7 @@ if app_mode == "Prediction":
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Attack Prediction", predictions)
+    st.write("Heart Disease Assessment", predictions)
     
 
     # Display performance metrics of the model
@@ -141,7 +141,7 @@ if app_mode == "Prediction":
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Attack Prediction", predictions)
+    st.write("Heart Disease Assessment", predictions)
    
     
     # Display performance metrics of the model
