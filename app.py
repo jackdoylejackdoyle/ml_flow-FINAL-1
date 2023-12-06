@@ -271,7 +271,7 @@ if app_mode == "Analysis":
   st.markdown("3. Heart disease is most common between 41 and 59 years of age.")
   st.markdown("4. Logistic Regression is most accurate for this set, followed by DecisionTreeClassification and KNN in descending order.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
-  st.write("&nbsp; Consultations with expert cardiologists on the most important indicators of heart disease would improve this model and dataset. This application is limited by the relatively small dataset of only 304 patients.")
+  st.write("&nbsp; Consultations with expert cardiologists on the most important indicators of heart disease would improve this model and dataset. These prediction models are limited by the small dataset of only 304 patients.")
 
   # Define a session state to store the button click status
 
