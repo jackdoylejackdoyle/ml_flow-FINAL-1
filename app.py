@@ -38,6 +38,7 @@ if app_mode == 'Introduction':
   # Set the title of the web app
   st.title("Heart Disease Assesment App")
   st.markdown("<br>", unsafe_allow_html=True)
+  st.write("This application takes 13 variables into account and returns a binary value for presence or absence heart disease. This technology would be very beneficial for cardiology offices trying to run preliminary tests to find out if patients are in danger or not.")
   #gif
   gif_path = 'HeartAttackImage.gif'
   width=250
@@ -58,9 +59,6 @@ if app_mode == 'Introduction':
   #image
   image_heart = Image.open('heartclipart2.png')
   st.image(image_heart, width=250)
-
-  st.title("Application Uses = Cardiologists")
-  st.write("This application takes many factors into account and returns a binary value for “at risk” or “not at risk” for a heart attack. This technology would be very beneficial for cardiology offices trying to run preliminary tests to find out if patients are in danger or not.")
 
 if app_mode == "Visualization":
   st.markdown("# :red[Visualization]")
@@ -274,8 +272,8 @@ if app_mode == "Analysis":
   st.markdown("5. Logistic Regression is most accurate for this set, followed by DecisionTreeClassification and KNN in descending order.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
   st.title("IMPROVING THE MODEL")
-  st.markdown("Our model only has a little over 300 different cases.  Additionally, all these cases are from the same city - Cleveland, Ohio. The American Fitness Index ranks Cleveland, Ohio as the 5th worst city in the US for heart health. Furthermore, O2 Saturation in the patients blood has been excluded from this list due to a formatting corruption in the dataset.")
-  st.markdown("These points lead to some of our analysis seeming off, such as the fact that after a certain point in one’s fifties, heart attacks are less likely. If we wanted to improve our dataset, we would want to have more data to use, data from a wider range of places, and a comprehensive list of heart health-related factors.")
+  st.markdown("Our model only has a little over 300 different cases.  Additionally, all these cases are from the same city - Cleveland, Ohio. The American Fitness Index ranks Cleveland, Ohio as the 5th worst city in the US for heart health. Furthermore, O2 Saturation in the patients blood has been excluded due to formatting issues.")
+  st.markdown("If we wanted to improve our dataset, we would want to have more data to use, data from a wider range of places, and a comprehensive list of heart health-related factors.")
 
   # Define a session state to store the button click status
 
