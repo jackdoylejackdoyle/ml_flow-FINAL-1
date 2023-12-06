@@ -270,9 +270,12 @@ if app_mode == "Analysis":
   st.markdown("1. Heart disease is most correlated with the following variables: maximum heart rate, exercise induced angina, numnber of blood vessels colored by fluoroscopy, slope of peak exercise ST segment, and chest pain (presence and/or type of angina).")
   st.markdown("2. Interestingly, blood pressure and cholesterol are weakly correlated with heart disease (-.14 and -.085 respectively.")
   st.markdown("3. Heart disease is most common between 41 and 59 years of age.")
-  st.markdown("4. Logistic Regression is most accurate for this set, followed by DecisionTreeClassification and KNN in descending order.")
+  st.markdown("4. Age is a key factor in worsening cholesterol, increased resting blood pressure, and increased number of blood vessels covered by fluoroscopy")
+  st.markdown("5. Logistic Regression is most accurate for this set, followed by DecisionTreeClassification and KNN in descending order.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
-  st.write("&nbsp; Consultations with expert cardiologists on the most important indicators of heart disease would improve this model and dataset. These prediction models are limited by the small dataset of only 304 patients.")
+  st.title("IMPROVING THE MODEL")
+  st.markdown("Our model only has a little over 300 different cases.  Additionally, all these cases are from the same city - Cleveland, Ohio. The American Fitness Index ranks Cleveland, Ohio as the 5th worst city in the US for heart health. Furthermore, O2 Saturation in the patients blood has been excluded from this list due to a formatting corruption in the dataset.")
+  st.markdown("These points lead to some of our analysis seeming off, such as the fact that after a certain point in one’s fifties, heart attacks are less likely. If we wanted to improve our dataset, we would want to have more data to use, data from a wider range of places, and a comprehensive list of heart health-related factors.")
 
   # Define a session state to store the button click status
 
