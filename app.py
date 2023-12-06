@@ -66,7 +66,7 @@ if app_mode == "Visualization":
   list_variables = df.columns
   symbols = st.multiselect("Select two variables",list_variables, ["Age", "Chest Pain"])
   width1 = st.sidebar.slider("plot width", 1, 25, 10)
-  tab1, tab2, tab3, tab4 = st.tabs(["Line Chart", "Bar Chart", "Correlation", "Pair Plot"])
+  tab1, tab2, tab3, tab4 = st.tabs(["Line Chart", "Bar Chart", "Correlation", "Pair Plot", ])
 
   if tab1.button("Show Line Chart"):
       st.line_chart(data=df, x=symbols[0], y=symbols[1], width=0, height=0, use_container_width=True)
@@ -85,9 +85,7 @@ if app_mode == "Visualization":
 
   if tab4.button("Show Pairplot"):
       st.markdown("### Pairplot")
-      df2 = df
-      fig3 = sns.pairplot(df2)
-      st.pyplot(fig3)
+      sns.pairplot(df, vars=["Age", "Chest Pain","Resting Blood Pressure","Resting ECG","Exercise Induced Angina","Thalassemia Reversable Defect" ])
   
   #image
   image_heart = Image.open('heartclipart2.png')
