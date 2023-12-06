@@ -99,13 +99,13 @@ if app_mode == "Prediction":
   
   if model_mode == 'KNN':
     st.markdown("# :red[KNN Prediction]")
-    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
+    X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = KNeighborsClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment", predictions)
+    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
 
   
     # Display performance metrics of the model
@@ -116,13 +116,13 @@ if app_mode == "Prediction":
 
   if model_mode == 'DecisionTreeClassifier':
     st.markdown("# :red[DecisionTreeClassifier Prediction]")
-    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
+    X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = DecisionTreeClassifier()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment", predictions)
+    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
     
 
     # Display performance metrics of the model
@@ -133,13 +133,13 @@ if app_mode == "Prediction":
 
   if model_mode == 'LogisticRegression':
     st.markdown("# :red[LogisticRegression Prediction]")
-    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
+    X = df.drop(labels="Heart Attack Prediction", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = LogisticRegression()
     lm.fit(X_train,y_train)
     predictions = lm.predict(X_test)
-    st.write("Heart Disease Assessment", predictions)
+    st.write("Heart Disease Assessment: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", predictions)
    
     
     # Display performance metrics of the model
