@@ -85,7 +85,7 @@ if app_mode == "Visualization":
 
   if tab4.button("Show Pairplot"):
       st.markdown("### Pairplot")
-      sns.pairplot(df, vars=["Age", "Chest Pain","Resting Blood Pressure","Resting ECG","Exercise Induced Angina","Thalassemia Reversable Defect" ])
+      sns.pairplot(df, vars=["Age", "Chest Pain", "Resting Blood Pressure", "Resting ECG", "Exercise Induced Angina", "Thalassemia Reversable Defect" ])
   
   #image
   image_heart = Image.open('heartclipart2.png')
@@ -99,7 +99,7 @@ if app_mode == "Prediction":
   
   if model_mode == 'KNN':
     st.markdown("# :red[KNN Prediction]")
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
+    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = KNeighborsClassifier()
@@ -116,7 +116,7 @@ if app_mode == "Prediction":
 
   if model_mode == 'DecisionTreeClassifier':
     st.markdown("# :red[DecisionTreeClassifier Prediction]")
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
+    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = DecisionTreeClassifier()
@@ -133,7 +133,7 @@ if app_mode == "Prediction":
 
   if model_mode == 'LogisticRegression':
     st.markdown("# :red[LogisticRegression Prediction]")
-    X = df.drop(labels="Heart Attack Prediction", axis=1)
+    X = df.drop(labels="Heart Attack Prediction: 0 = Presence of Heart Disease // 1 = Absence of Heart Disease", axis=1)
     y = df["Heart Attack Prediction"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.7)
     lm = LogisticRegression()
