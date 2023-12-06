@@ -266,11 +266,11 @@ if app_mode == "Analysis":
   st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
 
 
-  st.markdown("1. Risk of heart attack is most correlated with maximum heart rate, slope of peak exercise st segment, and chest pain (presence and/or type of angina).")
-  st.markdown("2. Risk of heart attack is highest between 41 and 59 years of age.")
-  st.markdown("3. The most accurate of our models is the Logistic Regression while the least accurate model is KNN.")
+  st.markdown("1. Heart disease is most correlated with maximum heart rate, slope of peak exercise ST segment, and chest pain (presence and/or type of angina).")
+  st.markdown("2. Heart disease is highest between 41 and 59 years of age.")
+  st.markdown("3. Our most accurate model uses Logistic Regression while our least accurate model uses KNN.")
   st.markdown("<br><br><br>", unsafe_allow_html=True)
-  st.write("In order to improve this model, we would need to consult with expert cardiologists to understand the best and most relevant factors and indicators of heart disease. It is possible that some of the columns in these prediction models are unecessary or harmful to the prediction.")
+  st.write("In order to improve this model, we should consult with expert cardiologists to understand the most relevant factors and indicators of heart disease. ")
 
   # Define a session state to store the button click status
 
