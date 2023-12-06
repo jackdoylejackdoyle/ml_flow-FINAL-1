@@ -38,7 +38,7 @@ if app_mode == 'Introduction':
   # Set the title of the web app
   st.title("Heart Disease Assesment App")
   st.markdown("<br>", unsafe_allow_html=True)
-  st.write("This application can help doctors diagnose patients with heart disease. By imputting data into 13 categories, a doctor can use one of three models to make a prediction about the presence or absence of heart disease in a patient.")
+  st.write("This application can diagnose heart disease with moderate efficacy. By imputting data into 13 categories, a doctor could use one of three models to make a prediction about the presence or absence of heart disease in a patient.")
   #gif
   gif_path = 'HeartAttackImage.gif'
   width=250
