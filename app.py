@@ -38,7 +38,6 @@ if app_mode == 'Introduction':
   # Set the title of the web app
   st.title("Heart Disease Assesment App")
   st.markdown("<br>", unsafe_allow_html=True)
-  st.write("This application can diagnose heart disease with moderate efficacy. By imputting data into 13 categories, a doctor could use one of three models to make a prediction about the presence or absence of heart disease in a patient.")
   #gif
   gif_path = 'HeartAttackImage.gif'
   width=250
@@ -59,6 +58,9 @@ if app_mode == 'Introduction':
   #image
   image_heart = Image.open('heartclipart2.png')
   st.image(image_heart, width=250)
+
+  st.title("Application Uses = Cardiologists")
+  st.write("This application takes many factors into account and returns a binary value for “at risk” or “not at risk” for a heart attack. This technology would be very beneficial for cardiology offices trying to run preliminary tests to find out if patients are in danger or not.")
 
 if app_mode == "Visualization":
   st.markdown("# :red[Visualization]")
