@@ -85,7 +85,8 @@ if app_mode == "Visualization":
 
   if tab4.button("Show Pairplot"):
       st.markdown("### Pairplot")
-      sns.pairplot(df, vars=["Age", "Chest Pain", "Resting Blood Pressure", "Resting ECG", "Exercise Induced Angina", "Thalassemia Reversable Defect" ])
+      fig = sns.pairplot(df, vars=["Age", "Chest Pain", "Resting Blood Pressure", "Resting ECG", "Exercise Induced Angina", "Thalassemia Reversable Defect" ])
+      st.pyplot(fig)
   
   #image
   image_heart = Image.open('heartclipart2.png')
